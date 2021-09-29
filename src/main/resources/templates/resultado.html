@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Resultado </title>
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<div>
+		<h1> ¿Cual es tu nivel de conocimiento de CS:GO?</h1>
+		<div th:if="${resultado_quiz==8}">
+			<img src="img/global.jpg" alt="imagen encuesta" height="400" width="800" /><br />
+			<textarea disabled>GLOBAL ELITE: tus conocimentos sobre el juego son muy grandes</textarea>
+		</div>
+		<div th:if="${resultado_quiz==6 || resultado_quiz==7 }">
+			<img src="img/pollo.jpg" alt="imagen encuesta" height="400" width="800" /><br />
+			<textarea disabled>LEGENDARY EAGLE MASTER: tus conocimentos sobre el juego son altos, te falta poco para estar en la elite</textarea>
+		</div>
+		<div th:if="${resultado_quiz>2 && resultado_quiz<6 }">
+			<img src="img/ak.jpg" alt="imagen encuesta" height="400" width="800" /><br />
+			<textarea disabled>MASTER GUARDIAN II: tus conocimentos sobre el juego medios,poco a poco iras aprendiendo</textarea>
+		</div>
+		<div th:if="${resultado_quiz==2 || resultado_quiz==1 }">
+			<img src="img/nova.jpg" alt="imagen encuesta" height="400" width="800" /><br />
+			<textarea disabled>NOVA: tus conocimentos sobre el juego son bajos </textarea>
+		</div>
+		<div th:if="${resultado_quiz==0 }">
+			<img src="img/plata.jpg" alt="imagen encuesta" height="400" width="800" /><br />
+			<textarea  disabled>PLATITA: NOOB,aprende a usar la p90 y rushear b </textarea>
+		</div>
+	</div>
+	<div>
+		<form th:action="@{/pregunta1}" method="post">
+			<input type="submit" value="Volver a intentar" />
+		</form>
+	</div>
+</body>
+
+</html>

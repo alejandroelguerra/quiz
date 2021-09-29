@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Pregunta 1</title>
+</head>
+
+<body>
+	<div>
+		<h1> ¿Cual es tu nivel de conocimento del CS:GO?</h1>
+		<img src="img/pregunta1.jpg" alt="imagen encuesta" height="400" width="800">
+		<form th:action="@{/pregunta1}" method="post">
+
+			<p>¿Cual es el nombre de esta zona del mapa de Inferno?<br>
+				<input type="radio" name="p1" value="Error" required>Medio</input>
+				<input type="radio" name="p1" value="Correcto">Banana</input>
+				<input type="radio" name="p1" value="Error">Larga</input>
+				<input type="radio" name="p1" value="Error">Corta</input><br>
+
+			</p>
+			<p><input type="submit" value="ENVIAR" /></p>
+		</form>
+		
+		
+
+	</div>
+</body>
+
+</html>

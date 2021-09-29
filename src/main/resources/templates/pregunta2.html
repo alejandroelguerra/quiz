@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Pregunta 1</title>
+</head>
+
+<body>
+	<div>
+		<h1> ¿Cual es tu nivel de conocimento del CS:GO?</h1>
+		<img src="img/pregunta2.jpg" alt="imagen encuesta" height="400" width="800">
+		<form th:action="@{/pregunta2}" method="post">
+			<p>¿Cual es el nombre de esta SKIN del AWP?<br>
+				<input type="radio" name="p2" value="Error" required>Gungnir</input>
+				<input type="radio" name="p2" value="Error">Asiimov </input>
+				<input type="radio" name="p2" value="Error">Artheris</input>
+				<input type="radio" name="p2" value="Correcto">Dragon lore</input><br>
+			</p>
+			<input type="submit" value="ENVIAR" />
+		</form>
+	</div>
+</body>
+
+</html>
