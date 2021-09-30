@@ -3,21 +3,24 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Pregunta 4</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
 </head>
 
 <body>
-	<div>
-		<h1> ¿Cual es tu nivel de conocimento del CS:GO?</h1>
-		<img src="img/pregunta4.jpg" alt="imagen encuesta" height="400" width="800">
-		<form th:action="@{/pregunta4}" method="post">
-			<p>¿Cual es el equipo que mas Majors ha ganado?<br>
-				<input type="radio" name="p4" value="Error" required>Cloud 9</input>
-				<input type="radio" name="p4" value="Error">Fnatic </input>
-				<input type="radio" name="p4" value="Correcto">Astralis</input>
-				<input type="radio" name="p4" value="Error">NIP</input><br>
-			</p>
-			<input type="submit" value="ENVIAR" />
-		</form>
+	<div class="container">
+		<div class="col-8">
+			<h1> ¿Cual es tu nivel de conocimento del CS:GO?</h1>
+			<img src="img/pregunta4.jpg" alt="imagen encuesta" height="400" width="800">
+			<form th:action="@{/pregunta4}" method="post">
+				<p>¿Cual es el equipo que mas Majors ha ganado?<br>
+					<input class="form-check-input" type="radio" name="p4" value="Error" required>Cloud 9</input>
+					<input class="form-check-input" type="radio" name="p4" value="Error">Fnatic </input>
+					<input class="form-check-input" type="radio" name="p4" value="Correcto">Astralis</input>
+					<input class="form-check-input" type="radio" name="p4" value="Error">NIP</input><br>
+				</p>
+				<button type="submit" class="btn btn-success">ENVIAR</button>
+			</form>
+		</div>
 	</div>
 </body>
 

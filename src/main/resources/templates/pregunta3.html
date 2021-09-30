@@ -3,22 +3,25 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Pregunta 3</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
 </head>
 
 <body>
-	<div>
-		<h1> ¿Cual es tu nivel de conocimento del CS:GO?</h1>
-		<img src="img/pregunta3.jpg" alt="imagen encuesta" height="400" width="800">
-		<form th:action="@{/pregunta3}" method="post">
-			<p>¿Cuales son los precios de la m4a1-s y m4a4?<br>
-				<input type="checkbox" class="form-check-input" name="p3_a" >2800$
-				<input type="checkbox" class="form-check-input" name="p3_b" >2900$
-				<input type="checkbox" class="form-check-input" name="p3_c" >3000$
-				<input type="checkbox" class="form-check-input" name="p3_d" >3100$
-			</p>
-			</p>
-			<input type="submit" value="ENVIAR" />
-		</form>
+	<div class="container">
+		<div class="col-8">
+			<h1> ¿Cual es tu nivel de conocimento del CS:GO?</h1>
+			<img src="img/pregunta3.jpg" alt="imagen encuesta" height="400" width="800">
+			<form th:action="@{/pregunta3}" method="post">
+				<p>¿Cuales son los precios de la m4a1-s y m4a4?<br>
+					<input type="checkbox" class="form-check-input" name="p3_a">2800$
+					<input type="checkbox" class="form-check-input" name="p3_b">2900$
+					<input type="checkbox" class="form-check-input" name="p3_c">3000$
+					<input type="checkbox" class="form-check-input" name="p3_d">3100$
+				</p>
+				</p>
+				<button type="submit" class="btn btn-success">ENVIAR</button>
+			</form>
+		</div>
 	</div>
 </body>
 

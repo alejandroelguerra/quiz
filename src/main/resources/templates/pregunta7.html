@@ -3,23 +3,26 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Pregunta 7</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
 </head>
 
 <body>
-	<div>
+	<div class="container">
+	<div class="col-8">
 		<h1> ¿Cual es tu nivel de conocimento del CS:GO?</h1>
 		<img src="img/pregunta7.jpg" alt="imagen encuesta" height="200" width="900">
 		<form th:action="@{/pregunta7}" method="post">
 			<p>¿Cual es el unico equipo con roster español que se clasifico al IEM FALL 2021 que da acceso al Major?<br>
-				<select name="p7">
+				<select class="form-select" name="p7">
 						<option value="Error">MAD Lions</option>
 						<option value="Error">KPI Gaming</option>
 						<option value="Error">X6tence</option>
 						<option value="Correcto">Movistar Riders</option>
 				</select>
 			</p>
-			<input type="submit" value="ENVIAR" />
+			<button type="submit" class="btn btn-success">ENVIAR</button>
 		</form>
+	</div>
 	</div>
 </body>
 

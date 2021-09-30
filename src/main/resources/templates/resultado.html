@@ -3,11 +3,13 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Resultado </title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
 	<link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 
 <body>
-	<div>
+	<div class="container">
+	<div class="col-8">
 		<h1> ¿Cual es tu nivel de conocimiento de CS:GO?</h1>
 		<div th:if="${resultado_quiz==8}">
 			<img src="img/global.jpg" alt="imagen encuesta" height="400" width="800" /><br />
@@ -27,13 +29,14 @@
 		</div>
 		<div th:if="${resultado_quiz==0 }">
 			<img src="img/plata.jpg" alt="imagen encuesta" height="400" width="800" /><br />
-			<textarea  disabled>PLATITA: NOOB,aprende a usar la p90 y rushear b </textarea>
+			<textarea class="form-control"  disabled>PLATITA: NOOB,aprende a usar la p90 y rushear b </textarea>
 		</div>
 	</div>
 	<div>
-		<form th:action="@{/pregunta1}" method="post">
-			<input type="submit" value="Volver a intentar" />
+		<form th:action="@{/destroy}" method="post">
+			<button type="submit" class="btn btn-info">VOLVER A INTENTAR</button>
 		</form>
+	</div>
 	</div>
 </body>
 

@@ -3,21 +3,23 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Pregunta 6</title>
+	
+	<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 
 <body>
-	<div>
+	<div class="container">
+	<div class="col-8">
 		<h1> ¿Cual es tu nivel de conocimento del CS:GO?</h1>
 		<img src="img/pregunta6.jpg" alt="imagen encuesta" height="400" width="800">
 		<form th:action="@{/pregunta6}" method="post">
 			<p>¿Cual es el jugador con mas MVPs dados por HLTV.org ?<br>
-				<input type="radio" name="p6" value="Correcto" required>Dev1ce</input>
-				<input type="radio" name="p6" value="Error">S1mple</input>
-				<input type="radio" name="p6" value="Error">ZywOo</input>
-				<input type="radio" name="p6" value="Error">GeT_RiGhT</input><br>
+				<textarea class="form-control" type="text"  name="p6" ></textarea>
 			</p>
-			<input type="submit" value="ENVIAR" />
+			<button type="submit" class="btn btn-success">ENVIAR</button>
 		</form>
+	</div>
 	</div>
 </body>
 
