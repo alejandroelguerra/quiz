@@ -9,17 +9,21 @@
 <body>
 	<div class="container">
 		<div class="col-8">
-		<h1> ¿Cual es tu nivel de conocimento del CS:GO?</h1>
-		<img src="img/pregunta2.jpg" alt="imagen encuesta" height="400" width="800">
-		<form th:action="@{/pregunta2}" method="post">
-			<p>¿Cual es el nombre de esta SKIN del AWP?<br>
-				<input class="form-check-input" type="radio" name="p2" value="Error" required>Gungnir</input>
-				<input class="form-check-input" type="radio" name="p2" value="Error">Asiimov </input>
-				<input class="form-check-input" type="radio" name="p2" value="Error">Artheris</input>
-				<input class="form-check-input" type="radio" name="p2" value="Correcto">Dragon lore</input><br>
-			</p>
-			<button type="submit" class="btn btn-success">ENVIAR</button>
-		</form>
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0"
+					aria-valuemax="100"></div>
+			</div>
+			<h1> ¿Cual es tu nivel de conocimento del CS:GO?</h1>
+			<img src="img/pregunta2.jpg" alt="imagen encuesta" height="400" width="800">
+			<form th:action="@{/pregunta2}" method="post">
+				<p>¿Cual es el nombre de esta SKIN del AWP?<br>
+					<input class="form-check-input" type="radio" name="p2" value="Error" required>Gungnir</input>
+					<input class="form-check-input" type="radio" name="p2" value="Error">Asiimov </input>
+					<input class="form-check-input" type="radio" name="p2" value="Error">Artheris</input>
+					<input class="form-check-input" type="radio" name="p2" value="Correcto">Dragon lore</input><br>
+				</p>
+				<button type="submit" class="btn btn-success">ENVIAR</button>
+			</form>
 		</div>
 	</div>
 </body>

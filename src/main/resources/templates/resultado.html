@@ -11,7 +11,7 @@
 	<div class="container">
 	<div class="col-8">
 		<h1> ¿Cual es tu nivel de conocimiento de CS:GO?</h1>
-		<div th:if="${resultado_quiz==8}">
+		<div th:if="${resultado_quiz>=8}">
 			<img src="img/global.jpg" alt="imagen encuesta" height="400" width="800" /><br />
 			<textarea disabled>GLOBAL ELITE: tus conocimentos sobre el juego son muy grandes</textarea>
 		</div>
@@ -21,7 +21,7 @@
 		</div>
 		<div th:if="${resultado_quiz>2 && resultado_quiz<6 }">
 			<img src="img/ak.jpg" alt="imagen encuesta" height="400" width="800" /><br />
-			<textarea disabled>MASTER GUARDIAN II: tus conocimentos sobre el juego medios,poco a poco iras aprendiendo</textarea>
+			<textarea disabled>MASTER GUARDIAN II: tus conocimentos sobre el juego son medios,poco a poco iras aprendiendo</textarea>
 		</div>
 		<div th:if="${resultado_quiz==2 || resultado_quiz==1 }">
 			<img src="img/nova.jpg" alt="imagen encuesta" height="400" width="800" /><br />
