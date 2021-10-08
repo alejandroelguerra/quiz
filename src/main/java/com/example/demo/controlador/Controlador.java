@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,8 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.modelo.Resultado;
+import com.example.demo.modelo.ResultadoDao;
+
 @Controller
 public class Controlador {
+	int resultado;
+	@Autowired
+	private ResultadoDao resuldao;
 //CREACION PREGUNTA 1
 	@RequestMapping(value = "/pregunta1", method = RequestMethod.GET)
 	public String pregunta1(Model model, HttpSession session) {
@@ -205,7 +212,7 @@ public class Controlador {
 			messages = new ArrayList<>();
 		}
 		int i = 0;
-		int resultado = 0;
+		resultado = 0;
 		for (i = 0; i < messages.size(); i++) {
 
 			if (messages.get(i).equals("Correcto")) {
@@ -215,6 +222,14 @@ public class Controlador {
 		model.addAttribute("resultado_quiz", resultado);
 		return "resultado";
 	}
+	
+	@RequestMapping(value = "/resultado", method = RequestMethod.POST)
+	public String resultado_post(Model model, HttpServletRequest request, @RequestParam String nombre) {
+
+		Resultado r= new Resultado( nombre, resultado);
+		resuldao.save(r);
+		return "redirect:/score";
+	} 
 
 //ELIMINAR SESSION
 	@PostMapping("/destroy")

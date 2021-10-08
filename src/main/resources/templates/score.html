@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Resultado </title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="col-8">
+		<h1>RESULTADOS</h1>
+		<table class="table table-hover">
+		<tr class="table-primary" th:each="puntuaciones : ${puntos}">
+			<td scope="row" th:text="${puntuaciones.nombre}"></td>
+            <td th:text="${puntuaciones.puntuacion}"></td>
+            <br>
+        </tr>
+		</table>
+			<form th:action="@{/destroy}" method="post">
+				<button type="submit" class="btn btn-info">VOLVER A JUGAR</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

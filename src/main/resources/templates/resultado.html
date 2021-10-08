@@ -33,8 +33,11 @@
 		</div>
 	</div>
 	<div>
-		<form th:action="@{/destroy}" method="post">
-			<button type="submit" class="btn btn-info">VOLVER A INTENTAR</button>
+		<form th:action="@{/resultado}" method="post">
+			<label>Nombre</label>
+			<input type="text" name="nombre" required/><br>
+			<label>Puntuacion: </label><label th:text="${resultado_quiz}" ></label><br>
+			<button type="submit" class="btn btn-info">VER PUNTUACIONES</button>
 		</form>
 	</div>
 	</div>
