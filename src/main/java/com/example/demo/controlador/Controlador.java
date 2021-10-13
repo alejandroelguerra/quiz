@@ -19,7 +19,6 @@ import com.example.demo.modelo.ResultadoDao;
 
 @Controller
 public class Controlador {
-	int resultado;
 	@Autowired
 	private ResultadoDao resuldao;
 //CREACION PREGUNTA 1
@@ -212,7 +211,7 @@ public class Controlador {
 			messages = new ArrayList<>();
 		}
 		int i = 0;
-		resultado = 0;
+		int resultado = 0;
 		for (i = 0; i < messages.size(); i++) {
 
 			if (messages.get(i).equals("Correcto")) {
@@ -224,8 +223,18 @@ public class Controlador {
 	}
 	
 	@RequestMapping(value = "/resultado", method = RequestMethod.POST)
-	public String resultado_post(Model model, HttpServletRequest request, @RequestParam String nombre) {
+	public String resultado_post(Model model, HttpSession session, @RequestParam String nombre) {
 
+		@SuppressWarnings("unchecked")
+		List<String> messages = (List<String>) session.getAttribute("RESPUESTA");
+		int i = 0;
+		int resultado = 0;
+		for (i = 0; i < messages.size(); i++) {
+
+			if (messages.get(i).equals("Correcto")) {
+				resultado = resultado + 1;
+			}
+		}
 		Resultado r= new Resultado( nombre, resultado);
 		resuldao.save(r);
 		return "redirect:/score";

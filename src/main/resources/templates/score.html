@@ -12,6 +12,12 @@
 		<div class="col-8">
 		<h1>RESULTADOS</h1>
 		<table class="table table-hover">
+		<thead>
+		<tr>
+		<th>Nombre</th>
+		<th>Puntuacion</th>
+		</tr>
+		</thead>
 		<tr class="table-primary" th:each="puntuaciones : ${puntos}">
 			<td scope="row" th:text="${puntuaciones.nombre}"></td>
             <td th:text="${puntuaciones.puntuacion}"></td>

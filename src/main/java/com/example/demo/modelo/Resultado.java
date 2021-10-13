@@ -1,9 +1,9 @@
 package com.example.demo.modelo;
 
 public class Resultado {
-	public long id;
-	public String nombre;
-	public int puntuacion;
+	private long id;
+	private String nombre;
+	private int puntuacion;
 
 	public Resultado(long id, String nombre, int puntuacion) {
 		this.id = id;
