@@ -15,7 +15,7 @@ public class ResultadoJDBC implements ResultadoDao {
 	@Override
 	public int save(Resultado resultado) {
 		
-		return jdbcTemplate.update("insert into Resultado (nombre,puntuacion)values(?,?)",resultado.getName(),resultado.getPuntuacion());
+		return jdbcTemplate.update("insert into Resultado (nombre,puntuacion)values(?,?)",resultado.getNombre(),resultado.getPuntuacion());
 	}
 
 	@Override

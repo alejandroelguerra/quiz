@@ -24,12 +24,12 @@ public class Resultado {
 		this.id = id;
 	}
 
-	public String getName() {
+	public String getNombre() {
 		return nombre;
 	}
 
-	public void setName(String name) {
-		this.nombre = name;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public int getPuntuacion() {
@@ -39,5 +39,7 @@ public class Resultado {
 	public void setPuntuacion(int puntuacion) {
 		this.puntuacion = puntuacion;
 	}
+
+	
 
 }
