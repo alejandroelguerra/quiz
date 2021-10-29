@@ -15,12 +15,12 @@ public class ResultadoJDBC implements ResultadoDao {
 	@Override
 	public int save(Resultado resultado) {
 		
-		return jdbcTemplate.update("insert into Resultado (nombre,puntuacion)values(?,?)",resultado.getNombre(),resultado.getPuntuacion());
+		return jdbcTemplate.update("insert into resultado (nombre,puntuacion)values(?,?)",resultado.getNombre(),resultado.getPuntuacion());
 	}
 
 	@Override
 	public List<Resultado> findAll() {
-		return jdbcTemplate.query("select * from Resultado order by puntuacion desc limit 10",
+		return jdbcTemplate.query("select * from resultado order by puntuacion desc limit 10",
 		(rs, rowNum) -> new Resultado(rs.getInt("id"), rs.getString("nombre"),
 		rs.getInt("puntuacion")));
 		}
